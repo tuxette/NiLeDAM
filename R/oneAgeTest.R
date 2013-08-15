@@ -1,7 +1,7 @@
 setClass("oneAgeTest", representation(data="ages",
                                       ages="vector",
                                       sd="vector",
-                                      ic="list",
+                                      ic="matrix",
                                       S="numeric",
                                       thres="numeric",
                                       df="numeric",

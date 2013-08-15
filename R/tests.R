@@ -18,8 +18,7 @@ testPop <- function(object, nb.pop, level) {
     res <- testOnePop(object@ages, object@sd, level)
     est.ages <- res$ages
     est.sd <- res$sd
-    est.IC <- list()
-    est.IC[[1]] <- res$ic
+    est.IC <- matrix(res$ic, ncol=2)
     chisq.stat <- res$S
     df <- length(object@ages)-1
     chisq.bound <- qchisq(1-level,df=df)
@@ -38,7 +37,7 @@ testPop <- function(object, nb.pop, level) {
     })
     est.ages <- unlist(res[1,])
     est.sd <- unlist(res[2,])
-    est.IC <- res[3,]
+    est.IC <- matrix(unlist(res[3,]), ncol=2,byrow=T)
     chisq.stat <- sum(unlist(res[4,]))
     df <- length(object@ages)-nb.pop
     chisq.bound <- qchisq(1-level,df=df)
