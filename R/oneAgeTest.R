@@ -55,6 +55,11 @@ setMethod("plot", "oneAgeTest", function(x, y=NULL, ...) {
   if (is.null(args$ylim)) args$ylim <- c(0,max(y))
   do.call("plot",args)
   apply(dens.y, 2, function(y) lines(dens.x,y))
+  sapply(1:length(x@data@ages), function(obs.nb) {
+    one.obs <- x@data@ages[obs.nb]
+    text(one.obs, dnorm(one.obs,one.obs,x@data@sd[obs.nb])*1.2,
+         as.character(obs.nb), cex=0.8)
+  })
   # display densities for the common age estimates
   if (is.null(args$lty)) args$lty <- 2
   if (is.null(args$lwd)) args$lwd <- 2

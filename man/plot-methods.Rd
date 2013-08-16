@@ -29,10 +29,12 @@ returned by the function \code{\link{tests}}.
 \item{\code{...}}{further arguments passed to the function \code{\link{plot}}.}
 }}
 \details{The estimated densities are Gaussian, as supposed by the model 
-described in Montel \emph{et al.} (1996). Note that if an object of class
-\code{\linkS4class{oneAgeTest}} is passed to the function, the common age(s)
-densities is displayed even if the test of the function \code{\link{tests}} is
-rejected.
+described in Montel \emph{et al.} (1996). Each density is referenced by its 
+number to help identify outliers or invalid measurements.
+
+Also note that if an object of class \code{\linkS4class{oneAgeTest}} is passed
+to the function, the common age(s) densities is displayed even if the test of
+the function \code{\link{tests}} is rejected.
 
 If arguments \option{col}, \option{lwd} and \option{lty} are supplied, they are
 used to display the density(ies) of the common age(s).
