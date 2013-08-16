@@ -38,7 +38,7 @@ citEntry(
   pages = '140--158',
 
   textVersion = paste('Seydoux-Guillaume A.M., Montel J.M., Bingen B., Bosse V., de Parseval P., Paquette J.L., Janots E., Wirth R.',
-                      '((2012))',
+                      '(2012)',
                       'Low-temperature alteration of monazite: fluid mediated coupled dissolution-precipitation, irradiation damage and disturbance of the U-Pb and Th-Pb chronometers.',
                       'Chemical Geology, 330--331, 140--158.')
 )
