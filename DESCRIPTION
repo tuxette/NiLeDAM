@@ -1,0 +1,23 @@
+Package: NiLeDAM
+Title: Monazite Datation for the NiLeDAM team
+Description: Facilities for dating monazite from electron microprobe
+Version: 0.1
+Date: 2013-08-14
+Authors@R: c(person("Jean-Marc","Montel",role="aut",
+    email="jean-marc.montel@ensg.inpl-nancy.fr"),
+    person("Anne-Magali","Seydoux-Guillaume",role="ctb",email="anne-magali.seydoux@get.obs-mip.fr"),
+    person("Nathalie", "Villa-Vialaneix", role = c("aut", "trl", "cre"),email="nathalie@nathalievilla.org"))
+Maintainer: Nathalie Villa-Vialaneix <nathalie@nathalievilla.org>
+Depends:
+    R (>= 3.0),
+    nleqslv,
+    methods
+License: WTFPL http://sam.zoy.org/wtfpl
+Repository: R-Forge
+Collate:
+    'ages.R'
+    'calculate.R'
+    'oneAgeTest.R'
+    'ageTests.R'
+    'tests.R'
+    'ages-oneAgeTest-ageTests.R'

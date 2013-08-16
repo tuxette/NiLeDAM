@@ -1,0 +1,44 @@
+citHeader("To cite the 'NiLeDAM' package in publications use:")
+
+year = sub('.*(2[[:digit:]]{3})-.*', '\\1', meta$Date, perl = TRUE)
+vers = paste('R package version', meta$Version)
+
+citEntry(
+  entry = 'manual',
+  title = paste('NiLeDAM:', meta$Title),
+  author = as.person(meta$Author),
+  year = year,
+  note = vers,
+  url = meta$URL,
+  textVersion = paste('Villa-Vialaneix N., Montel J.M. (', year, ') NiLeDAM: ', meta$Title, '. ', vers, '.', sep = '')
+)
+
+citEntry(
+  entry = 'article',
+  title = 'Electron microprobe dating of monazite',
+  author = personList(as.person("Jean-Marc Montel"),as.person("Suzanne Foret"),as.person("Michel Veschambre"),as.person("Christian Nicollet"), as.person("Ariel Provost")),
+  journal = 'Chemical Geology',
+  year = 1996,
+  volume= 131,
+  pages = '37--53',
+
+  textVersion = paste('Montel J.M., Foret S., Veschambre M., Nicollet C., Provost A.',
+                      '(1996)',
+                      'Electron microprobe dating of monazite.',
+                      'Chemical Geology, 131, 37--53.')
+)
+
+citEntry(
+  entry = 'article',
+  title = 'Low-temperature alteration of monazite: fluid mediated coupled dissolution-precipitation, irradiation damage and disturbance of the U-Pb and Th-Pb chronometers',
+  author = personList(as.person("Anne-Magali Seydoux-Guillaume"),as.person("Jean-Marc Montel"),as.person("Bernard Bingen"),as.person("Valerie Bosse"),as.person("Philippe de Parseval"), as.person("Jean-Louis Paquette"), as.person("Emilie Janots"), as.person("Richard Wirth")),
+  journal = 'Chemical Geology',
+  year = 2012,
+  volume= '330--331',
+  pages = '140--158',
+
+  textVersion = paste('Seydoux-Guillaume A.M., Montel J.M., Bingen B., Bosse V., de Parseval P., Paquette J.L., Janots E., Wirth R.',
+                      '((2012))',
+                      'Low-temperature alteration of monazite: fluid mediated coupled dissolution-precipitation, irradiation damage and disturbance of the U-Pb and Th-Pb chronometers.',
+                      'Chemical Geology, 330--331, 140--158.')
+)

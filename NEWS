@@ -1,0 +1,6 @@
+NiLeDAM 0.1
+  The initial official version of NiLeDAM package
+  
+  Available features:
+    calculate ages from triplets (U,Th,Pb)
+    estimate the most probable age population number
