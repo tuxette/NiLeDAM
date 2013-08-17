@@ -1,7 +1,7 @@
 # Define UI for dataset viewer application
 shinyUI(pageWithSidebar(
   # Application title
-  headerPanel("Welcome to the NiLeDAM online application !"),
+  headerPanel("Welcome to the NiLeDAM online application!"),
 
   sidebarPanel(
 		h2("Data importation"),
@@ -35,10 +35,17 @@ shinyUI(pageWithSidebar(
 	             p(HTML("This application is a graphical interface of the <a
                       href='http://niledam.r-forge.r-project.org/'>NiLeDAM</a>
                       package using the <a href='http://cran.univ-paris1.fr/'>R
-                      </a> software environment.<br>If you have any trouble
+                      </a> software environment. If you have any trouble
                       using it, please do not hesitate to contact <a 
                       mailto:'nathalie[AT]nathalievilla.org'>Nathalie
                       Villa-Vialaneix</a>, the package's maintainer.")),
+               p(HTML("The application scripts are available on GitHub:
+                      <font color='#870500'><b>git clone 
+                      https://github.com/tuxette/niledam.git</b></font></code>
+                      </span> and distributed <strong>without any guarantee
+                      </strong> under the licence
+                      <a href='http://www.wtfpl.net/'> WTFPL</a>.")),
+               
 	             h3("Basic user guide"),
 	             p(HTML("To run the application, import your file with (U,Th,Pb)
                       contents and corresponding errors. This file must be a
