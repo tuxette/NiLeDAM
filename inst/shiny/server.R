@@ -9,10 +9,10 @@ shinyServer(function(input, output) {
     
     if (input$rownames) {
       read.table(in.file$datapath, header=input$header, sep=input$sep,
-               quote=input$quote, row.names=1)
+               quote=input$quote, row.names=1, dec=input$dec)
     } else {
       read.table(in.file$datapath, header=input$header, sep=input$sep,
-                 quote=input$quote)
+                 quote=input$quote, dec=input$dec)
     }
   })
   output$view <- renderTable({
