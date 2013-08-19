@@ -22,11 +22,11 @@ Seydoux-Guillaume \emph{et al.} (2012).
   }
 }
 \details{
-The first 8 observations are group control data. When testing if all the 
-observations are issued from a single population, the assumption is thus 
-rejected. Removing the first 8 observations leads to obtain a positive answer 
-when testing if the observations come from the same population. See 
-\code{demo(srilanka)}.
+The first 8 observations are group control data (more precisely, they correspond
+to standard reference analyses). When testing if all the observations are issued
+from a single population, the assumption is thus rejected. Removing the first 8
+observations leads to obtain a positive answer when testing if the observations
+come from the same population. See \code{demo(srilanka)}.
 }
 \references{
 Seydoux-Guillaume A.M., Montel J.M., Bingen B., Bosse V., de Parseval P.,

@@ -1,8 +1,8 @@
 Package: NiLeDAM
 Title: Monazite Datation for the NiLeDAM team
-Description: Facilities for dating monazite from electron microprobe
+Description: Th-U-Pb electron microprobe age dating of monazite
 Version: 0.1
-Date: 2013-08-14
+Date: 2013-08-19
 Authors@R: c(person("Jean-Marc","Montel",role="aut",
     email="jean-marc.montel@ensg.inpl-nancy.fr"),
     person("Anne-Magali","Seydoux-Guillaume",role="ctb",email="anne-magali.seydoux@get.obs-mip.fr"),
@@ -12,9 +12,10 @@ Depends:
     R (>= 2.15),
     nleqslv,
     methods
-License: WTFPL http://sam.zoy.org/wtfpl
+License: GPL (>= 2)
 Repository: R-Forge
 Collate:
+    'init.R'
     'ages.R'
     'calculate.R'
     'oneAgeTest.R'

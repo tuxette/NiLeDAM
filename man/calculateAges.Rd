@@ -8,8 +8,8 @@
 \arguments{
   \item{measures}{a data.frame object with one electron microprobe measurement
   by row and with columns U, corresponding error for U, Th, corresponding error
-  for Th, Pb, corresponding error for Pb. See an example with 
-  \command{data(srilanka)}.}
+  for Th, Pb, corresponding error for Pb, all expressed in ppm. See an example
+  with \command{data(srilanka)}.}
 
   \item{nloops}{the number of Monte Carlo (MC) simulations used to estimate the
   confidence intervals for the ages. Default is \code{1000}.}
@@ -38,10 +38,11 @@
   The standard deviations and the confidence intervals are calculated using a MC
   approach: randomized observations of the triplets are generated from normal
   distributions with standard deviations equal to
-  \eqn{\frac{\textrm{error}}{2}}{error/2}. Standard deviations are estimated by
-  the empirical standard deviations and confidence intervals by quantiles for
-  probabilities \eqn{\frac{\textrm{\texttt{level}}}{2}}{level/2} and
-  \eqn{1-\frac{\textrm{\texttt{level}}}{2}}{1-level/2}, respectively.
+  \eqn{\frac{\textrm{error}}{2}}{error/2} where 'error' denotes the error in the
+  measurement of Th, U or Pb, passed in \option{measures}. Standard deviations
+  are estimated by the empirical standard deviations and confidence intervals by
+  quantiles for probabilities \eqn{\frac{\textrm{\texttt{level}}}{2}}{level/2}
+  and \eqn{1-\frac{\textrm{\texttt{level}}}{2}}{1-level/2}, respectively.
 }
 \note{
   You should use at least 1000 MC simulations otherwise the estimated confidence

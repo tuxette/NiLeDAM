@@ -27,26 +27,30 @@ shinyUI(pageWithSidebar(
 		h2("Tests"),
     helpText(HTML("Once the ages calculated, the 'Test' panel is used to 
                   determine from which number of age population, the analyses
-                  are coming."))
+                  are coming.")),
+		p(HTML("<div style='background-color:#FADDF2;border:1px solid black;'>This
+           application is a graphical interface of the <a
+           href='http://niledam.r-forge.r-project.org/'>NiLeDAM</a> package
+           using the <a href='http://cran.univ-paris1.fr/'>R</a> software
+           environment. If you have any trouble using it, please do not hesitate
+           to contact <a mailto:'nathalie[AT]nathalievilla.org'>Nathalie 
+           Villa-Vialaneix</a>, the package's maintainer.<br>
+           The application scripts are available on GitHub:<br> 
+           <code><font color='#870500'><b>git clone
+           https://github.com/tuxette/niledam.git</b></font></code><br>and
+           distributed <strong>without any guarantee</strong> under the licence
+           <a href='http://cran.r-project.org/web/licenses/GPL-2'>GPL-2</a>.
+           </div>")),
+		p(HTML("")),
+    p(HTML("<strong>If you are using the application for your publications,
+           please
+<a href='https://owncloud.nathalievilla.org/apps/files_sharing/get.php?token=2bd2782289949699ce4f8246dc2ef62363806cf2'>
+           cite us</a>.</strong>"))
   ),
 
 	mainPanel(
 	  tabsetPanel(
 	    tabPanel("Data",
-	             p(HTML("This application is a graphical interface of the <a
-                      href='http://niledam.r-forge.r-project.org/'>NiLeDAM</a>
-                      package using the <a href='http://cran.univ-paris1.fr/'>R
-                      </a> software environment. If you have any trouble
-                      using it, please do not hesitate to contact <a 
-                      mailto:'nathalie[AT]nathalievilla.org'>Nathalie
-                      Villa-Vialaneix</a>, the package's maintainer.")),
-               p(HTML("The application scripts are available on GitHub:
-                      <font color='#870500'><b>git clone 
-                      https://github.com/tuxette/niledam.git</b></font></code>
-                      </span> and distributed <strong>without any guarantee
-                      </strong> under the licence
-                      <a href='http://www.wtfpl.net/'> WTFPL</a>.")),
-               
 	             h3("Basic user guide"),
 	             p(HTML("To run the application, import your file with (U,Th,Pb)
                       contents and corresponding errors. This file must be a
@@ -73,11 +77,20 @@ href='http://owncloud.nathalievilla.org/apps/files_sharing/get.php?token=5173104
 	             numericInput("risk","Risk (%) for the confidence interval
                             (adviced: 5%):", 5),
 	             numericInput("seed",
-                            "Set a random seed for reproducible results:",
+                            HTML("Set a random seed for reproducible results
+                                 <a href='#pseudor'><sup>(1)</sup></a>:"),
 	                          as.numeric(format(Sys.time(), "%M%S"))),  
                br(),br(),
                downloadButton('downloadAges', 'Download Ages'),br(),br(),
-               tableOutput("ages")),
+               tableOutput("ages"),
+               p(HTML("<a name='pseudor'><sup>(1)</sup></a> The age stimation is
+                      based on Monte Carlo method that uses randomness. Setting
+                      a seed results in fixing the random procedure in order to
+                      obtain reproducible results (runing several times the 
+                      process with the same random seed will give the same
+                      ages). More information on pseudo-random generators at <a
+href='http://en.wikipedia.org/wiki/Pseudorandom_number_generator'
+                     >this link</a>."))),
       
 	    tabPanel("Tests",
                helpText(HTML("Either supply 'nbmin' and 'nbmax' to find the
