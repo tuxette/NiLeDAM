@@ -24,10 +24,14 @@ ageEqDerivative <- function(x, an.obs) {
 
 calculateOneAge <- function(an.obs) {
   age.init <- an.obs[3]/208/(an.obs[2]*2.1325E-07+an.obs[1]*6.7724E-07)
-  solution <- nleqslv(age.init, function(x) ageEquation(x,an.obs),
-                      function(x) ageEqDerivative(x,an.obs))
+  solution <- try(nleqslv(age.init, function(x) ageEquation(x,an.obs),
+                          function(x) ageEqDerivative(x,an.obs)),
+                  silent = TRUE)
+  if (inherits(solution, "try-error")) {
+    solution <- NA
+  } else solution <- round(solution$x)
 
-  return(round(solution$x))
+  return(solution)
 }
 
 calculateOneDistribution <- function(d, nloops) {
@@ -54,9 +58,12 @@ calculateAges <- function(measures, nloops=1000, level=0.05, verbose=TRUE,
                    "(it might take a while if 'nloops' is large...\n\n")
   if (!is.null(seed)) set.seed(seed)
   all.rand.t <- t(apply(d, 1, calculateOneDistribution, nloops=nloops))
-  ci.bounds <- apply(all.rand.t, 1, quantile, probs=c(level/2,1-level/2))
+  if (sum(is.na(all.rand.t)) > 0)
+    warning(paste("Number of invalid estimations is", sum(is.na(all.rand.t))))
+  ci.bounds <- apply(all.rand.t, 1, quantile, probs=c(level/2,1-level/2),
+                     na.rm = TRUE)
   colnames(ci.bounds) <- rownames(measures)
-  ages.sd <- apply(all.rand.t, 1, sd)
+  ages.sd <- apply(all.rand.t, 1, sd, na.rm = TRUE)
   names(ages.sd) <- rownames(measures)
   
   res <- new(Class="ages", data=measures, ages=t.init, ci=ci.bounds, sd=ages.sd,

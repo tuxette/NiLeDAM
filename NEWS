@@ -1,3 +1,8 @@
+NiLeDAM 0.1-1
+  Improved version by removing predictions when estimation cannot be performed
+
+  Include live interface
+
 NiLeDAM 0.1
   The initial official version of NiLeDAM package
   

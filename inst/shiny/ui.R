@@ -83,11 +83,11 @@ href='http://owncloud.nathalievilla.org/apps/files_sharing/get.php?token=5173104
                br(),br(),
                downloadButton('downloadAges', 'Download Ages'),br(),br(),
                tableOutput("ages"),
-               p(HTML("<a name='pseudor'><sup>(1)</sup></a> The age stimation is
-                      based on Monte Carlo method that uses randomness. Setting
-                      a seed results in fixing the random procedure in order to
-                      obtain reproducible results (runing several times the 
-                      process with the same random seed will give the same
+               p(HTML("<a name='pseudor'><sup>(1)</sup></a> The age estimation
+                      is based on Monte Carlo method that uses randomness.
+                      Setting a seed results in fixing the random procedure in
+                      order to obtain reproducible results (runing several times
+                      the process with the same random seed will give the same
                       ages). More information on pseudo-random generators at <a
 href='http://en.wikipedia.org/wiki/Pseudorandom_number_generator'
                      >this link</a>."))),

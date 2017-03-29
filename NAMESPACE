@@ -1,3 +1,5 @@
+export(liveNiLeDAM)
+
 export(calculateAges)
 
 exportClasses("ages", "oneAgeTest", "ageTests")
