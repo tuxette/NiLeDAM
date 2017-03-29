@@ -4,7 +4,7 @@
 \title{Graphical Web User Interface for NiLeDAM}
 \description{Starts the NiLeDAM GUI}
 \usage{
-sombreroGUI()
+liveNiLeDAM()
 }
 
 \arguments{
